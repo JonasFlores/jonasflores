@@ -6,8 +6,8 @@ import { ILandingScreenProps } from "../src/shared/interfaces/landing"
 export default function LandingPage(){
 
     const [props, setProps] = useState<ILandingScreenProps>({
-        title: "state",
-        description: "state",
+        title: "No DB Conection found",
+        description: "Please initialize the server API",
     })
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export default function LandingPage(){
     return(
     <>
         <Head>
-            <title>{props.head_title ? props.head_title : "default Title" }</title>
+            <title>{props.head_title ? props.head_title : "Title not found" }</title>
         </Head>
         <LandingScreen description={props.description} title={props.title}/>
     </>
