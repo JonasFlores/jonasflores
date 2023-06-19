@@ -12,7 +12,9 @@ export default function LandingPage(){
 
     useEffect(() => {
         
-        fetch("http://localhost:3000/pages?page=index")
+        let URL = "https://json-server-jonasflores.vercel.app/pages?page=index"
+        
+        fetch(URL)
             .then(res => res.json())
             .then(data => {
                 setProps(data[0])
