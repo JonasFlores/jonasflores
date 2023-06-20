@@ -1,5 +1,5 @@
 import React from 'react';
-import {Accounts} from '../../src/components/accounts';
+import {Accounts} from '../../src/components/template/accounts';
 
 const accounts = () => {
    return <Accounts />;
