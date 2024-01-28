@@ -1,4 +1,4 @@
-import { Collapse, Grid, Text } from "@nextui-org/react";
+import { Collapse, Text } from "@nextui-org/react";
 import { Flex } from "../styles/flex";
 
 export default function JobSection(){

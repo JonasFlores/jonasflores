@@ -1,16 +1,9 @@
-import React, {useState} from 'react';
 import {Box} from '../../styles/box';
 import {Sidebar} from './sidebar.styles';
 import {Avatar, Tooltip} from '@nextui-org/react';
 import {Flex} from '../../styles/flex';
-import {CompaniesDropdown} from './companies-dropdown';
 import {HomeIcon} from '../icons/sidebar/home-icon';
-import {BalanceIcon} from '../icons/sidebar/balance-icon';
-import {AccountsIcon} from '../icons/sidebar/accounts-icon';
 import {ReportsIcon} from '../icons/sidebar/reports-icon';
-import {DevIcon} from '../icons/sidebar/dev-icon';
-import {SettingsIcon} from '../icons/sidebar/settings-icon';
-import {CollapseItems} from './collapse-items';
 import {SidebarItem} from './sidebar-item';
 import {SidebarMenu} from './sidebar-menu';
 import {useSidebarContext} from '../layout/layout-context';
@@ -34,7 +27,6 @@ export const SidebarWrapper = () => {
 
          <Sidebar collapsed={collapsed}>
             <Sidebar.Header>
-               <CompaniesDropdown />
             </Sidebar.Header>
             <Flex
                direction={'column'}
@@ -67,6 +59,8 @@ export const SidebarWrapper = () => {
                      
                   </SidebarMenu>
                   
+                  {/*
+                  
                   <SidebarMenu title="Dashboard Template">
                      <CollapseItems
                         icon={<BalanceIcon />}
@@ -79,20 +73,9 @@ export const SidebarWrapper = () => {
                         />
 
                   </SidebarMenu>
+                  */}
+                  
 
-                  <SidebarMenu title="Future features">
-                     <SidebarItem
-                        isActive={router.pathname === '/developers'}
-                        title="Source Code"
-                        icon={<DevIcon />}
-                        
-                     />
-                     <SidebarItem
-                        isActive={router.pathname === '/settings'}
-                        title="Settings"
-                        icon={<SettingsIcon />}
-                     />
-                  </SidebarMenu>
                </Sidebar.Body>
 
                <Sidebar.Footer>
@@ -104,12 +87,6 @@ export const SidebarWrapper = () => {
                      <FilterIcon />
                   </Tooltip>
                   */}
-                  <Tooltip content={'Profile'} rounded color="primary">
-                     <Avatar
-                        src="https://avatars.githubusercontent.com/u/20671649?v=4"
-                        size={'sm'}
-                     />
-                  </Tooltip>
                </Sidebar.Footer>
             </Flex>
          </Sidebar>
