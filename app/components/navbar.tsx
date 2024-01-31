@@ -5,43 +5,39 @@ import Link from 'next/link';
 import { menus, MenuItem } from '@/data/menus';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import clsx from 'clsx';
+import { MenuAlt2Icon, XIcon, LinkIcon } from '@heroicons/react/solid';
 
 export function NavBar(){
     const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-black lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
-      <div className="flex h-14 items-center px-4 py-4 lg:h-auto">
-        <Link
-          href="/"
-          className="group flex w-full items-center gap-x-2.5"
-          onClick={close}
-        >
-
-          <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
-            Custom NavBar
-          </h3>
-        </Link>
-      </div>
-      <button
-        type="button"
-        className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden bg-green-600"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="font-medium text-gray-100 group-hover:text-gray-400">
-          Menu
+    <div className="h-full w-full bg-black">
+      
+      {/* Wraper */}
+      <div className={clsx("flex flex-row items-center h-14 px-4 py-4 lg:border-none", {
+              'border-b-2 border-green-600': isOpen,
+              })}>
+        <div className='basis-11/12'>
+          <Link href="/" onClick={close} className="group flex w-full items-center gap-x-2.5">
+            <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
+              Portfolio
+            </h3>
+          </Link>
         </div>
-        {isOpen ? (
-          <>X</>
-        ) : (
-          <>=</>
-        )}
-      </button>
+        
+        <div className='text-black hover:text-white'>
+          <button type="button" onClick={() => setIsOpen(!isOpen)} className="group px-4 absolute right-0 top-0 flex gap-x-2 h-14 bg-green-600 lg:hidden items-center">
+            <div className="font-medium ">Menu</div>
+            {isOpen ? (<XIcon className="block w-6" />) : (<MenuAlt2Icon className="block w-6" />)}
+          </button>
+        </div>
+
+      </div>
 
       <div
         className={clsx('overflow-y-auto lg:static lg:block', {
-          'fixed inset-x-0 bottom-0 top-14 mt-px bg-black': isOpen,
+          'fixed inset-x-0 bottom-0 top-14 bg-black': isOpen,
           hidden: !isOpen,
         })}
       >
@@ -53,7 +49,7 @@ export function NavBar(){
                   <div>{section.name}</div>
                 </div>
 
-                <div>
+                <div className='mx-2'>
                   {section.itens.map((item) => (
                     <GlobalNavItem key={item.slug} item={item} close={close} />
                   ))}
@@ -76,20 +72,27 @@ function GlobalNavItem({
 }) {
   const segment = useSelectedLayoutSegment();
   const isActive = item.slug === segment;
+  
+  let href = item.Isexternal ? item.slug : '/' + item.slug
 
   return (
     <Link
       onClick={close}
-      href={`/${item.slug}`}
+      href={href}
+      target={clsx({'_blank': item.Isexternal})}
       className={clsx(
         'block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300',
         {
           'text-gray-400 hover:bg-green-600': !isActive,
           'text-white': isActive,
+          'pointer-events-none': item.Disable
         },
       )}
     >
-      {item.name}
+      <div className='flex gap-x-1'>
+        {item.name}
+        {item.Isexternal? <LinkIcon className='w-4'/> : false}
+      </div>
     </Link>
   );
 }
