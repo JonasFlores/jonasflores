@@ -35,9 +35,9 @@ export default function Page(){
 				including philosophy, music, psychology, astronomy, physics, mathematics, biology, history, politics, and cultural aspects.
 			</p>
 			<p>
-					I a'm currently holding a valid work visa until June 2024 and am actively seeking sponsorship opportunities. 
+					I am currently holding a valid work visa until June 2024 and am actively seeking sponsorship opportunities. 
 					I am enthusiastic about the prospect of contributing my skills and 
-					dedication to' your team and look forward to the possibility of discussing how I can add value to your organisation.
+					dedication to your team and look forward to the possibility of discussing how I can add value to your organisation.
 			</p>
 		</div>
 		
