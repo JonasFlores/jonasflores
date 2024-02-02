@@ -44,7 +44,7 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 		]
 	},
 	{
-		name: "_",
+		name: "test",
 		itens: [
 			{
 				name: 'Test',
