@@ -51,7 +51,7 @@ export function NavBar(){
 
                 <div className='mx-2'>
                   {section.itens.map((item) => (
-                    <GlobalNavItem key={item.slug} item={item} close={close} />
+                    <GlobalNavItem key={item.name} item={item} close={close} />
                   ))}
                 </div>
               </div>

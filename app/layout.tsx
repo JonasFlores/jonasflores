@@ -20,13 +20,13 @@ export default function RootLayout({
       <body className="bg-gray-950 bg-[url('/grid.svg')] h-screen overflow-hidden ">
 
       {/* wraper */}
-      <div className='grid lg:grid-rows-1 lg:grid-cols-12 lg:h-full'>
+      <div className='grid lg:grid-rows-1 lg:grid-cols-12 touch-auto h-screen'>
         
           <aside className='lg:col-span-3 '>
             <NavBar/>
           </aside>
 
-          <main className="lg:col-span-9 overflow-y-auto">
+          <main className="lg:col-span-9 overflow-y-auto ">
           <div className="mx-auto space-y-8 px-2 m-3">
             <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
               <div className="rounded-lg p-3.5 bg-white">
