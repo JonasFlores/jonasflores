@@ -16,30 +16,29 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-950 bg-[url('/grid.svg')] h-screen overflow-hidden ">
+<html lang="en">
+<body className="bg-gray-950 bg-[url('/grid.svg')] overflow-hidden">
 
-      {/* wraper */}
-      <div className='grid lg:grid-rows-1 lg:grid-cols-12 touch-auto h-screen'>
-        
-          <aside className='lg:col-span-3 '>
-            <NavBar/>
-          </aside>
+  {/* wrapper */}
+  <div className='grid grid-cols-1 lg:grid-cols-12 grid-rows-[3.5rem_auto] lg:grid-rows-none h-screen'>
+    
+    <aside className='lg:col-span-3'>
+      <NavBar/>
+    </aside>
 
-          <main className="lg:col-span-9 overflow-y-auto ">
-          <div className="mx-auto space-y-8 px-2 m-3">
-            <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
-              <div className="rounded-lg p-3.5 bg-white">
-                {children}
-                </div>
-            </div>
+    <main className="lg:col-span-9 overflow-y-auto touch-auto ">
+      <div className="mx-auto space-y-8 px-2 m-3">
+        <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
+          <div className="rounded-lg p-3.5 bg-white">
+            {children}
           </div>
-          </main>
-
+        </div>
       </div>
+    </main>
 
-      </body>
-    </html>
+  </div>
+</body>
+</html>
   )
 }
 // https://tailwindcss.com/docs/responsive-design sm / md / lg / xl / 2xl
