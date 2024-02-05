@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
 <html lang="en">
-<body className="bg-gray-950 bg-[url('/grid.svg')] overflow-hidden">
+<body className="bg-[url('/grid.svg')] overflow-hidden">
 
   {/* wrapper */}
   <div className='grid grid-cols-1 lg:grid-cols-12 grid-rows-[3.5rem_auto] lg:grid-rows-none h-screen'>
@@ -26,8 +26,8 @@ export default function RootLayout({
       <NavBar/>
     </aside>
 
-    <main className="lg:col-span-9 overflow-y-auto touch-auto ">
-      <div className="mx-auto space-y-8 px-2 m-3">
+    <main className="lg:col-span-9 overflow-y-auto touch-auto">
+      <div className="mx-auto px-2 mt-6 mb-12 w-11/12">
         <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
           <div className="rounded-lg p-3.5 bg-white">
             {children}

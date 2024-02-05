@@ -17,6 +17,21 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 		]
 	},
 	{
+		name: 'Concepts',
+		itens: [
+			{name:'Lifecycle UseState vs Constraints', slug:'usestate-lifecycle'}
+		]
+	},
+	{
+		name: "Site",
+		itens: [
+			{
+				name: 'Settings',
+				slug:'settings'
+			}
+		]
+	},
+	{
 		name: "Coming soon",
 		itens: [
 			{
@@ -39,17 +54,6 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 				name: 'Linkedin',
 				slug: 'https://www.linkedin.com/in/jonassflores/',
 				Isexternal: true
-			}
-			
-		]
-	},
-	{
-		name: "test",
-		itens: [
-			{
-				name: 'Test',
-				slug: 'test',
-
 			}
 			
 		]
