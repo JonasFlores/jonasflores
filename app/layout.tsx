@@ -27,9 +27,9 @@ export default function RootLayout({
     </aside>
 
     <main className="lg:col-span-9 overflow-y-auto touch-auto">
-      <div className="mx-auto px-2 mt-6 mb-12 w-11/12">
-        <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
-          <div className="rounded-lg p-3.5 bg-white">
+      <div className="mx-auto px-2 mt-6 mb-12 w-11/12 ">
+        <div className="rounded-lg p-px shadow-lg shadow-black/40">
+          <div className="rounded-xl p-3.5 bg-white pb-20">
             {children}
           </div>
         </div>

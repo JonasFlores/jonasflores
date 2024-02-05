@@ -84,11 +84,11 @@ function Card({
   <>
     <div className='flex-auto w-6/12'>
       <h1 className='text-xl text-center p-2'>{title}</h1>
-      <div className={clsx( clasName,"text-white h-60 overflow-y-auto p-5")}>
+      <div className={clsx( clasName,"text-white h-60 overflow-y-auto p-5 text-xs")}>
         { cardItems.map((item) => {return(
         <div key={crypto.randomUUID()}>
           <p> {item.value} </p>
-          <hr className='mt-1'/>
+          <hr className='mb-1 opacity-50' />
         </div>
         )}) }
       </div>
