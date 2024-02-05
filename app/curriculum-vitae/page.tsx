@@ -42,7 +42,7 @@ export default function Page(){
         <h2 className="text-lg font-semibold tracking-wider">EXPERIENCE</h2>
         <div className="text-sm">
         <br/>I worked on the fiscal project, collaborating with a small team to develop an automated tool for calculating and analyzing Brazilian System taxes. 
-          <br/>Our main challenge from the project's inception was addressing the data generation time for analysis, considering that our primary clients were 
+          <br/>Our main challenge from the {'project\'s'} inception was addressing the data generation time for analysis, considering that our primary clients were 
           <br/>Financial Institutions with billions of records to be processed annually. 
           <br/>Our solution involved focusing on delivering with highly complex yet simple algorithms to optimize every possible fraction of a second.
           <br/>We implemented processes in parallelism wherever feasible.
