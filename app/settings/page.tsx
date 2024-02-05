@@ -1,7 +1,10 @@
 export default function Page(){
   return (
     <>
-      settings
+      <div className="">
+        <div className="text-sm font-semibold">Settings</div>
+        
+      </div>
     </>
   )
 }
