@@ -1,7 +1,7 @@
 export default function Header(){
   return(
     <>
-    <div className="my-10 text-center">
+    <div className="mt-2 mb-7 text-center">
       <h1 className="font-semibold text-4xl tracking-widest text-slate-500">JONAS FLORES</h1>
       
       <h2 className="text-slate-500 font-medium text-xl tracking-widest"> 
