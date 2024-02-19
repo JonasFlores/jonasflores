@@ -7,11 +7,11 @@ export default function Page(){
 		
 			<Header/>
 
-			<div className="mx-5">
+			<div className="mx-1 md:mx-14 text-pretty">
 
 				{/* About me */}
 				<div>
-					<h2 className="text-lg font-semibold tracking-wider mb-2">COVER LETTER</h2>
+					<h2 className="text-md font-bold tracking-wider mb-1">COVER LETTER</h2>
 					<div className="text-md">
 					<p className="mb-2">
 							I have been harbouring the aspiration to return to the IT field, 
