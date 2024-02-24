@@ -1,44 +1,55 @@
 import { ShowTextWrapped } from "../components/text"
 
-export type ExperienceStrutucture = {
-  firstCol: string,
-  secondCol: {
-    firstLine: string,
-    secondLine?: string
+export type TableCVStrutucture = {
+  
+  Title: string,
+  rowHide?: string,
+  key: number,
+  
+  col1: {
+    line1: string,
+    line2?: string,
+    line3?: string
   },
-  thirdCol: {
-    firstLine: string,
-    secondLine?: string,
-    thirdLine?: string
+  col2: {
+    line1: string,
+    line2?: string
+    line3?: string
   },
-  textToWrap: string
+  col3: {
+    line1: string,
+    line2?: string,
+    line3?: string
+  },
+
 }
 
-export function Experience({data}:{data: ExperienceStrutucture[]}){
+export function TableCV({data}:{data: TableCVStrutucture[]}){
   return (
     <>
-    <h2 className="font-bold tracking-wider mb-2">EXPERIENCE</h2>
-    {data.map((experience) =>{
+    <h2 className="font-bold tracking-wider mb-2">{data[0].Title}</h2>
+    
+    {data.map((section) =>{
       return ( <>
 
-        <div className="my-1 text-sm text-pretty border-b border-gray-200">
+        <div key={section.key} className="my-1 text-sm text-pretty border-b border-gray-200">
           <div className="flex flex-row">
-            <div className="basis-1/12">{experience.firstCol}</div>
+            <div className="basis-1/12">{section.col1.line1}</div>
             
             <div className="basis-5/12 text-right">
-              <div className="font-medium">{experience.secondCol.firstLine}</div>
-              <div className="font-light">{experience.secondCol.secondLine}</div>        
+              <div className="font-medium italic">{section.col2.line1}</div>
+              <div className="font-light">{section.col2.line2}</div>        
             </div>
             
-            <div className="basis-6/12 text-right">
-              <div className="font-medium">{experience.thirdCol.firstLine}</div>
-              <div className="font-light">{experience.thirdCol.secondLine}</div>
-              <div className="font-light text-xs">{experience.thirdCol.thirdLine}</div>
+            <div className="basis-6/12 text-right mb-1">
+              <div className="font-medium">{section.col3.line1}</div>
+              <div className="font-light">{section.col3.line2}</div>
+              <div className="font-light text-xs">{section.col3.line3}</div>
             </div>
           </div>
-
+          
           <ShowTextWrapped>
-            {experience.textToWrap}
+            {section.rowHide}
           </ShowTextWrapped>
 
         </div>

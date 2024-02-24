@@ -1,7 +1,7 @@
 import Header from "../components/curriculum-vitae/header"
 import SignLine from "../components/curriculum-vitae/signLine"
-import { Experience } from "./components"
-import { experienceData } from "./api"
+import { TableCV } from "./components"
+import { experienceData, qualificationData } from "./api"
 
 export default function Page(){
   
@@ -30,17 +30,13 @@ export default function Page(){
 
       {/* Experience */}
       <div className="mt-8 text-md">
-        <Experience data={experienceData}/>
+        <TableCV data={experienceData}/>
       </div>
 
 
       {/* Qualification */}
       <div className="mt-8 text-md">
-        <h2 className="font-bold tracking-wider">EDUCATION AND QUALIFICATION</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quisquam laboriosam reiciendis assumenda optio alias minus necessitatibus deleniti debitis excepturi labore delectus, nesciunt eveniet dignissimos sint ratione dolor sit. Aspernatur.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quisquam laboriosam reiciendis assumenda optio alias minus necessitatibus deleniti debitis excepturi labore delectus, nesciunt eveniet dignissimos sint ratione dolor sit. Aspernatur.
-        </p>
+        <TableCV data={qualificationData}/>
       </div>
 
 

@@ -1,41 +1,101 @@
-import { ExperienceStrutucture } from "./components";
+import { TableCVStrutucture } from "./components";
 
-export const experienceData: ExperienceStrutucture[] = [
+export const experienceData: TableCVStrutucture[] = [
   {
-    firstCol: "2022",
-    secondCol: {
-      firstLine: "Kitchen Hand",
-      secondLine: "Ice Cream Maker"
+    Title: "EXPERIENCE",
+    key: 1,
+
+    col1:{
+      line1:  "2022"
     },
-    thirdCol: {
-      firstLine: "Patagonia Chocolates",
-      secondLine: "Since July 2022"
+    col2: {
+      line1: "Kitchen Hand",
+      line2: "Ice Cream Maker"
     },
-    textToWrap: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ullam nihil maxime eos dolor obcaecati quae, asperiores, blanditiis natus vel commodi eum! Ipsum, iste. Quasi, veniam? Non autem quibusdam incidunt?"
+    col3: {
+      line1: "Patagonia Chocolates",
+      line2: "Since July 2022"
+    }
+  
   },
   {
-    firstCol: "2019",
-    secondCol: {
-      firstLine: "Software Developer"
+    Title: "EXPERIENCE",
+    key: 2,
+
+    col1:{
+      line1:  "2019"
     },
-    thirdCol: {
-      firstLine: "Sispro | Brazil",
-      secondLine: "Jan 2019 - Feb 2021",
-      thirdLine: "www.sispro.com.br"
+    col2: {
+      line1: "Software Developer",
     },
-    textToWrap: "I worked on the fiscal project, collaborating with a small team to develop an automated tool for calculating and analyzing Brazilian System taxes. Our main challenge from the {'project\'s'} inception was addressing the data generation time for analysis, considering that our primary clients were Financial Institutions with billions of records to be processed annually. Our solution involved focusing on delivering with highly complex yet simple algorithms to optimize every possible fraction of a second. We implemented processes in parallelism wherever feasible."
+    col3: {
+      line1: "Sispro | Brazil",
+      line2: "Jan 2019 - Feb 2021",
+      line3: "www.sispro.com.br"
+    },
+    rowHide: "I worked on the fiscal project, collaborating with a small team to develop an automated tool for calculating and analyzing Brazilian System taxes. Our main challenge from the {'project\'s'} inception was addressing the data generation time for analysis, considering that our primary clients were Financial Institutions with billions of records to be processed annually. Our solution involved focusing on delivering with highly complex yet simple algorithms to optimize every possible fraction of a second. We implemented processes in parallelism wherever feasible."
   },
   {
-    firstCol: "2011",
-    secondCol: {
-      firstLine: "Transport and Storage"
+    Title: "EXPERIENCE",
+    key: 3,
+
+    col1:{
+      line1:  "2011"
     },
-    thirdCol: {
-      firstLine: "Building Supplies Bom Sucesso | Brazil",
-      secondLine: "Jun 2011 - Dec 2018"
+    col2: {
+      line1: "Transport and Storage",
     },
-    textToWrap: "Delivery, storage, purchase and sale, carpentry assistant in the companys construction."
-  }
+    col3: {
+      line1:  "Building Supplies Bom Sucesso | Brazil",
+      line2: "Jun 2011 - Dec 2018",
+    },
+    rowHide: ""
+    //rowHide: "Delivery, storage, purchase and sale, carpentry assistant in the companys construction."
+  },
 ]
 
+export const qualificationData: TableCVStrutucture[] = [
+  {
+    Title: "EDUCATION E QUALIFICATION",
+    key: 1,
 
+    col1:{
+      line1:  "2017"
+    },
+    col2: {
+      line1: "Unilasalle",
+    },
+    col3: {
+      line1: "Bachelor of Computer Science",
+      // line2: "In Course"
+    }
+  },
+  {
+    Title: "EDUCATION E UALIFICATION",
+    key: 2,
+
+    col1:{
+      line1:  "2017"
+    },
+    col2: {
+      line1: "QI - Brazil",
+    },
+    col3: {
+      line1: "English Course",
+    },
+  },
+  {
+    Title: "EDUCATION E QUALIFICATION",
+    key: 3,
+    
+    col1:{
+      line1:  "2015"
+    },
+    col2: {
+      line1: "QI - Brazil",
+    },
+    col3: {
+      line1:  "Computer Technician"
+    },
+  },
+]
