@@ -6,12 +6,11 @@ export default function SignLine(){
 
   return (
     <>
-    <hr className="mt-14"/>
-      <div className="text-xs text-right font-semibold">
-        Jonas da Silva Flores
-        <br/>
-        Queenstown, {months[currentMonth]} {currentYear}
-      </div>
+    <hr className="mt-14 mb-1"/>
+    <div className="text-xs text-right">
+      <div className="font-semibold">Jonas da Silva Flores</div>
+      <div className="italic">Queenstown, {months[currentMonth]} {currentYear}</div>
+    </div>
     </>
   )
 }

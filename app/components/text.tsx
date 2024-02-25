@@ -15,11 +15,11 @@ export function ShowTextWrapped({children}: {children: ReactNode}){
     <div className="text-xs text-gray-600 text-right">
 
       <div className={clsx("flex flex-row-reverse",{"hidden": view })} onClick={()=>{setView(!view)}}> 
-        <a className="basis-6/12 line-clamp-1 text-blue-500 cursor-pointer"> Activites description... </a>
+        <a className="basis-6/12 line-clamp-1 text-blue-500 cursor-pointer hover:text-blue-400"> Activites description... </a>
       </div>
 
       <p className={clsx({"hidden": !view })} >{children}</p>
-      <a onClick={()=>{setView(!view)}} className={clsx("text-blue-500 cursor-pointer",{"hidden": !view })}>show less!</a>
+      <a onClick={()=>{setView(!view)}} className={clsx("text-blue-500 cursor-pointer hover:text-blue-400",{"hidden": !view })}>Show less.</a>
     </div>
     </>
   )

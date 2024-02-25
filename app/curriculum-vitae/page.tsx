@@ -1,7 +1,8 @@
 import Header from "../components/curriculum-vitae/header"
 import SignLine from "../components/curriculum-vitae/signLine"
-import { TableCV } from "./components"
-import { experienceData, qualificationData } from "./api"
+import { TableCV, TitleSectionCV } from "./components"
+import { experienceData, qualificationData, skillsData } from "./api"
+import clsx from "clsx"
 
 export default function Page(){
   
@@ -17,8 +18,10 @@ export default function Page(){
 
       {/* About me */}
       <div className="text-md">
-        <h2 className="font-bold tracking-wider">ABOUT ME</h2>
-        <div>
+        
+        <TitleSectionCV title="about me" />
+    
+        <div className="text-sm">
           <p>DOB: 01/02/1995</p>
           <p>Motivated Software Developer with 3 years of hands-on experience.</p>
           <p>Seeking new career opportunities in the field.</p>
@@ -37,6 +40,24 @@ export default function Page(){
       {/* Qualification */}
       <div className="mt-8 text-md">
         <TableCV data={qualificationData}/>
+      </div>
+
+      {/* Skills */}
+      <div className="mt-8 text-md">
+
+        <TitleSectionCV title="skills" />
+
+        <div className="flex flex-wrap text-sm ">
+        
+        {skillsData.map((item) => {
+          return (
+             <div className={clsx("basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5", {"font-medium" : item.important})}> 
+              {item.skill} </div>
+             )
+            })}
+        </div>
+
+
       </div>
 
 

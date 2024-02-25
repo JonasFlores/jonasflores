@@ -1,4 +1,4 @@
-import { TableCVStrutucture } from "./components";
+import { TableCVStrutucture } from "./types";
 
 export const experienceData: TableCVStrutucture[] = [
   {
@@ -9,11 +9,11 @@ export const experienceData: TableCVStrutucture[] = [
       line1:  "2022"
     },
     col2: {
-      line1: "Kitchen Hand",
-      line2: "Ice Cream Maker"
+      line1: "Patagonia Chocolates",
+      line2: "Kitchen Hand",
     },
     col3: {
-      line1: "Patagonia Chocolates",
+      line1: "Ice Cream Maker",
       line2: "Since July 2022"
     }
   
@@ -26,10 +26,10 @@ export const experienceData: TableCVStrutucture[] = [
       line1:  "2019"
     },
     col2: {
-      line1: "Software Developer",
+      line1: "Sispro | Brazil",
     },
     col3: {
-      line1: "Sispro | Brazil",
+      line1: "Software Developer",
       line2: "Jan 2019 - Feb 2021",
       line3: "www.sispro.com.br"
     },
@@ -43,10 +43,11 @@ export const experienceData: TableCVStrutucture[] = [
       line1:  "2011"
     },
     col2: {
-      line1: "Transport and Storage",
+      line1:  "Bom Sucesso | Brazil",
+      line2:  "Building Supplies",
     },
     col3: {
-      line1:  "Building Supplies Bom Sucesso | Brazil",
+      line1: "Transport and Storage",
       line2: "Jun 2011 - Dec 2018",
     },
     rowHide: ""
@@ -60,25 +61,42 @@ export const qualificationData: TableCVStrutucture[] = [
     key: 1,
 
     col1:{
-      line1:  "2017"
+      line1:  "2023"
     },
     col2: {
-      line1: "Unilasalle",
+      line1: "Alura",
     },
     col3: {
-      line1: "Bachelor of Computer Science",
-      // line2: "In Course"
-    }
+      line1: "Web Development",
+      line2: "Specialization studies"
+    },
+    rowHide:"React, Typescript, ChatGPT, Docker, Next JS, React Native, WebPack"
   },
   {
-    Title: "EDUCATION E UALIFICATION",
+    Title: "EDUCATION E QUALIFICATION",
     key: 2,
 
     col1:{
       line1:  "2017"
     },
     col2: {
-      line1: "QI - Brazil",
+      line1: "Unilasalle | Brazil",
+    },
+    col3: {
+      line1: "Computer Science",
+       line2: "College on hold, third semester."
+    }
+  },
+  
+  {
+    Title: "EDUCATION E UALIFICATION",
+    key: 3,
+
+    col1:{
+      line1:  "2017"
+    },
+    col2: {
+      line1: "QI | Brazil",
     },
     col3: {
       line1: "English Course",
@@ -86,16 +104,41 @@ export const qualificationData: TableCVStrutucture[] = [
   },
   {
     Title: "EDUCATION E QUALIFICATION",
-    key: 3,
+    key: 4,
     
     col1:{
       line1:  "2015"
     },
     col2: {
-      line1: "QI - Brazil",
+      line1: "QI | Brazil",
     },
     col3: {
       line1:  "Computer Technician"
     },
   },
+]
+
+export const skillsData: {
+  skill: string,
+  important?: boolean
+}[] = [
+  {skill: "SQL", important: true},
+  {skill: "React", important: true},
+  {skill: "TypeScript", important: true},
+  {skill: "JavaScript", important: true},
+  {skill: "Linux", important: true},
+  {skill: "Git", important: true},
+  {skill: "Docker", important: true},
+  {skill: "Outsystems", important: true},
+  {skill: "PHP", important: false},
+  {skill: "Java", important: false},
+  {skill: "Tailwind CSS", important: false},
+  {skill: "Excel", important: false},
+  {skill: "AppSheets", important: false},
+  {skill: "Vue", important: false},
+  {skill: "Windows", important: false},
+  {skill: "Node", important: false},
+  {skill: "Bootstrap", important: false},
+  {skill: "AWS", important: false},
+  {skill: "Jasper Reports", important: false},
 ]

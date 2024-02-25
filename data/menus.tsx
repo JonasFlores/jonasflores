@@ -43,6 +43,11 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 				name: 'Wage Calculator - New Zealand Tax',
 				slug: '#',
 				Disable: true
+			},
+			{
+				name: 'Production Reports Tool',
+				slug: '#',
+				Disable: true
 			}
 			
 		]
