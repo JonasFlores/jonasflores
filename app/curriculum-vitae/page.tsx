@@ -51,7 +51,7 @@ export default function Page(){
         
         {skillsData.map((item) => {
           return (
-             <div className={clsx("basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5", {"font-medium" : item.important})}> 
+             <div key={item.skill} className={clsx("basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5", {"font-medium" : item.important})}> 
               {item.skill} </div>
              )
             })}
