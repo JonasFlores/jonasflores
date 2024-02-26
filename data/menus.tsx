@@ -23,7 +23,8 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 	{
 		name: 'Concepts',
 		itens: [
-			{name:'Lifecycle UseState vs Constraints', slug:'usestate-lifecycle'}
+			{name:'Lifecycle UseState vs Constraints', slug:'usestate-lifecycle'},
+			{name:'TXT Converter to JSON Tool', slug:'converter-tool'}
 		]
 	},
 	{
