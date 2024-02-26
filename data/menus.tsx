@@ -12,6 +12,10 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 			{
 				name: 'Curriculum Vitae',
 				slug: 'curriculum-vitae'
+			},
+			{
+				name: 'Wage Tax Information - New Zealand',
+				slug: 'wage-tax-nz',
 			}
 			
 		]
@@ -19,7 +23,8 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 	{
 		name: 'Concepts',
 		itens: [
-			{name:'Lifecycle UseState vs Constraints', slug:'usestate-lifecycle'}
+			{name:'Lifecycle UseState vs Constraints', slug:'usestate-lifecycle'},
+			{name:'TXT Converter to JSON Tool', slug:'converter-tool'}
 		]
 	},
 	{
@@ -36,11 +41,6 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 		itens: [
 			{
 				name: 'AppSheets - Inventory Managment',
-				slug: '#',
-				Disable: true
-			},
-			{
-				name: 'Wage Calculator - New Zealand Tax',
 				slug: '#',
 				Disable: true
 			},
