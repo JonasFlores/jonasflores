@@ -12,6 +12,10 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 			{
 				name: 'Curriculum Vitae',
 				slug: 'curriculum-vitae'
+			},
+			{
+				name: 'Wage Tax Information - New Zealand',
+				slug: 'wage-tax-nz',
 			}
 			
 		]
@@ -36,11 +40,6 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 		itens: [
 			{
 				name: 'AppSheets - Inventory Managment',
-				slug: '#',
-				Disable: true
-			},
-			{
-				name: 'Wage Calculator - New Zealand Tax',
 				slug: '#',
 				Disable: true
 			},
