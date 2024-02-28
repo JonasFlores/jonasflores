@@ -1,14 +1,17 @@
 import clsx from 'clsx';
-import * as fs from 'fs'
 import { TableFilter } from './components';
+import { tableIrdPaye, tableIrdPayeTest } from '@/data/table_IRD_PAYE';
+
+
+function txtToArray(txt: string){
+  let data = txt.split('\n')
+  let titles = data[0].split(' ')
+  return {data, titles}
+}
 
 export default function Page(){
-  const fullText = fs.readFileSync('./data/test.txt', 'utf-8');
-  //const fullText = fs.readFileSync('./data/table_IRD_PAYE.txt', 'utf-8');
-  const lines = fullText.split('\r\n')
-  const line1 = lines[0]
-  const titles = line1.split(' ')
-
+  
+  let {data, titles} = txtToArray(tableIrdPayeTest)
 
   return(
     <>
@@ -27,12 +30,11 @@ export default function Page(){
       </thead>
       <tbody>
         
-        {lines.map((line, index)=> {
+        {data.map((line, index)=> {
           const cols = line.split(' ')
-          
           let col1 = parseFloat(cols[0])
           let col2 = parseFloat(cols[1])
-          let col3 = parseFloat(cols[2])
+          let col3 = cols[2]
           let netPay = col1 - col2
 
           if(index == 0){return}
