@@ -4,9 +4,9 @@ import { SyntheticEvent, useEffect, useState } from "react"
 
 export default function Page(){
   
-  const [editableTxt, setEditableTxt] = useState('')
-  const [generatedCSV, setGeneratedCSV] = useState<string[]>()
-  const [generatedJson, setGeneratedJson] = useState<{}[]>()
+  const [editableTxt, setEditableTxt] = useState<string>('')
+  const [generatedCSV, setGeneratedCSV] = useState<string[]>([])
+  const [generatedJson, setGeneratedJson] = useState<{}[]>([])
   const separator_CSV = ';'
 
   // TXT FUNCTIONS
@@ -17,42 +17,43 @@ export default function Page(){
   
   // // JSON Functions
   // //SET_JSON > generatedCsv_Changes_Listener
-  // useEffect(()=>{ setGeneratedJson(JsonGeneratorRealTime(generatedCSV)) }, [generatedCSV])
+  useEffect(()=>{ setGeneratedJson(JsonGeneratorRealTime(generatedCSV)) }, [generatedCSV])
   
-  // function JsonGeneratorRealTime(csv: {}[]): {}[]{
-  //   let output:{}[] = []
-  //   let keys:string[] = []
-  //   let values:string[] = []
+  function JsonGeneratorRealTime(csv: string[]): {}[]{
+    let output:{}[] = []
+    let keys:string[] = []
+    let values:string[] = []
+    let keyValueList:[string, string][] = []
+
+    let listElements = csv
     
-  //   let listElements = CsvToArray(csv)
+    if(listElements.length == 0){return output}
     
-  //   if(listElements.length == 0){return output}
+    //headers
+    listElements[0].split(separator_CSV).forEach((header, i)=>{ keys.push(header) })
     
-  //   //headers
-  //   listElements[0].split(separator_CSV).forEach((header, i, arr)=>{
-  //     //ignore last ; (pseudo-element)
-  //     if(i == arr.length - 1){return}
-  //     keys.push(header)
-  //   })
+    //remove headers from the list
+    listElements.shift()
     
-  //   //remove headers from the list
-  //   listElements.splice(0,1)
-    
-  //   let keyValueList:[key:string, value:string][] = []
-  //   let temp:[[a: string, b:string]]
-  //   listElements.forEach((line) => {
+    listElements.forEach((line) => {
+      //reset variables
+      keyValueList = []
+      values = []
+
+      line.split(separator_CSV).forEach((value) => { values.push(value) })
+
+      keys.forEach((key, index) =>{ keyValueList.push([key, values[index]]) })
       
-  //     line.split(separator_CSV).forEach((value, i, arr) => {
-  //       //ignore last ; (fake element)
-  //       if(i == (arr.length - 1)){return}
-  //       values.push(value)
-  //     })
+      try {
+        output.push(Object.fromEntries(keyValueList))
+      } catch (error) {
+        console.log(error)
+      }
+      
+    })
 
-  //     values = []
-  //   })
-
-  //   return output
-  // }
+    return output
+  }
 
   // CSV Functions
   //SET_CSV > EditableTXT_Changes_Listener
@@ -77,9 +78,7 @@ export default function Page(){
       output.push(element)
     })
     
-    console.log(output)
     return output
-  
   }
 
   function CsvToArray(csv: string): string[]{
@@ -111,8 +110,6 @@ export default function Page(){
             <textarea name="txt" id="inputTxt" 
               value={editableTxt} 
               onChange={(event: SyntheticEvent & {target : HTMLTextAreaElement}) => onChangeEditableTxt(event)} 
-              //onBlur={(event: SyntheticEvent) => FixGeneratedCSV()} 
-              //onMouseDown={(event: SyntheticEvent) => FixGeneratedCSV()} 
               placeholder="Insert your text here"
               rows={5}
               className="w-full overflow-y-auto p-2 border shadow-lg border-slate-500 focus:outline-none rounded-md"
@@ -144,67 +141,7 @@ export default function Page(){
 }
 
 /*
-                  CsvToArray(generatedCSV).map((line, i) => {
-                    if(line == ''){ return }
-                    if(i == 0){ return ( <span key={i}>{line}</span>) }
-                    return <span key={i}><br/>{line}</span>
-                    })
                   
-
- 
-  function CheckGeneratedCSV(csv: string, originTxt: string): { isValid: boolean, errorMessage: string, hasPossibilityFix: boolean, isEmpty: boolean }{
-    let output = {isValid: false, errorMessage: 'Default error Message | Validation not Implemented', hasPossibilityFix: false, isEmpty: false} 
-
-    if(csv.length == 0){
-      output.errorMessage = 'CSV is empty'
-      output.isEmpty = true
-      return output
-    }
-
-    if((originTxt.trim().length == 0)){
-      output.isValid = true
-      return output
-    }
-
-    let lastChar = csv.trimEnd()[csv.trimEnd().length-1]
-
-    if(lastChar == separator_CSV){
-      output.isValid = true
-      output.errorMessage = ''
-      return output
-
-    }else{
-
-      output.errorMessage = 'The last `;` is missing'
-      output.hasPossibilityFix = true
-      return output
-    }
-      
-    return output
-  }
-
-  function FixGeneratedCSV(): void {
-    
-    let  output_CheckGeneratedCSV = CheckGeneratedCSV(generatedCSV, editableTxt)
-    
-    if(output_CheckGeneratedCSV.isValid || output_CheckGeneratedCSV.isEmpty){
-      return
-    }
-
-    if((output_CheckGeneratedCSV.isValid == false) && (output_CheckGeneratedCSV.hasPossibilityFix == false) ){
-      console.log('Error: ' + output_CheckGeneratedCSV.errorMessage)
-    }
-
-    if((output_CheckGeneratedCSV.isValid == false) && (output_CheckGeneratedCSV.hasPossibilityFix == true) ){
-      
-      //setGeneratedCSV( generatedCSV + ';')
-
-    }
-
-  }
-
-
-
       try {  
         keys.forEach((key, indice) => {
           console.log('key[i]: ' + keys[indice] + ' | value[i]: ' + values[indice] + ' | ' + line + ' | ' + indice )
