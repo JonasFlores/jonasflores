@@ -35,32 +35,30 @@ export default function Page(){
   return(
     <>
     <div>
-      <div className='ml-10'>
-        <div className='font-semibold'>Description</div>
+      <div className='mx-2 text-slate-800'>
+        <div className='font-semibold text-lg'>Description</div>
         <div className='text-sm'>
           This page ilustrates the lifecycle of UseState and Consts in React.
           <br />
-          Feel free to click on the action buttons  to gain a better undertanding of their behavior.
+          Feel free to click on the action buttons  to gain a better understanding of their behavior.
         </div>
       </div>
       <hr className='my-4'/>
       <div className='flex gap-4'>
-          <Card cardItems={stateItems} title="useState itens lifecycle" clasName="bg-red-600" ></Card>
-          <Card cardItems={constItems} title='const Settings lifecycle' clasName='bg-red-700'></Card>
+          <Card cardItems={stateItems} title="useState itens lifecycle"></Card>
+          <Card cardItems={constItems} title='const Settings lifecycle'></Card>
       </div>
-      <div className='p-5 text-white bg-slate-500 mt-5'>
+      <div className='py-2 px-6 text-slate-800 bg-slate-200 mt-3'>
         Current Counter: {counter}
       </div>
 
-      <hr className='my-6'/>
-      <div className='text-sm mb-2'>Actions:</div>
-      <div className='flex gap-5'>
-
-          <button onClick={addItem} className='rounded bg-green-700 text-white p-4'>Apend log Itens</button>
+      <hr className='my-4'/>
+      <div className='flex flex-row gap-2 text-xs justify-center'>
+          <button onClick={addItem} className='rounded bg-green-400 shadow-lg text-slate-800 px-4 py-2 hover:font-medium'>Apend log Itens</button>
           <Tooltip message='This action calls a function who redirect the page using the router'>
-          <button onClick={goBack} className='rounded bg-yellow-600 text-white p-4' >Soft Refresh</button>
+            <button onClick={goBack} className='rounded bg-yellow-300 text-slate-800 px-4 py-2 shadow-lg hover:font-medium' >Soft Refresh</button>
           </Tooltip>
-          <button onClick={reload} className='rounded bg-red-600 text-white p-4'>Hard Refresh</button>
+          <button onClick={reload} className='rounded bg-red-300 text-slate-800 px-4 py-2 shadow-lg hover:font-medium'>Hard Refresh</button>
           
         
       </div>
@@ -71,24 +69,16 @@ export default function Page(){
   )
 }
 
-function Card({
-    cardItems,
-    title,
-    clasName  
-  } : {
-    cardItems: Item[],
-    title: string,
-    clasName: string
-  }){
+function Card({cardItems,title,clasName } : {cardItems: Item[],title: string, clasName?: string}){
   return(
   <>
-    <div className='flex-auto w-6/12'>
-      <h1 className='text-xl text-center p-2'>{title}</h1>
-      <div className={clsx( clasName,"text-white h-60 overflow-y-auto p-5 text-xs")}>
-        { cardItems.map((item) => {return(
-        <div key={crypto.randomUUID()}>
+    <div className='flex-auto basis-1/2'>
+      <h1 className='text-sm text-center mb-2 font-medium'>{title}</h1>
+      <div className={clsx( clasName,"rounded-sm bg-slate-200 text-slate-800 h-40 overflow-y-auto p-5 text-xs")}>
+        { cardItems.map((item, i) => {return(
+        <div key={i}>
           <p> {item.value} </p>
-          <hr className='mb-1 opacity-50' />
+          <hr className='mb-1 border-black border-opacity-40' />
         </div>
         )}) }
       </div>
@@ -102,9 +92,9 @@ function Tooltip({ children, message } : {children: React.ReactNode, message?: s
 
   return (
   <>
-    <div className='relative inline-block' onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+    <div className='relative border' onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
       {children}
-      <span className={clsx('absolute top-full left-0 bg-slate-400 p-2 my-2 -mx-28 text-center text-zinc-900 rounded-md',{'hidden': !show}) }>{message}</span>
+      <div className={clsx('absolute mt-2 p-1 rounded-sm text-center -mx-32 text-zinc-900 bg-slate-300',{'hidden': !show}) }>{message}</div>
     </div>
   
   </>
