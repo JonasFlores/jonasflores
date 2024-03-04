@@ -17,9 +17,8 @@ export default function RootLayout({
 }) {
   return (
 <html lang="en">
-<body className="bg-[url('/grid.svg')] overflow-hidden">
+<body className="overflow-hidden">
 
-  {/* wrapper */}
   <div className='grid grid-cols-1 lg:grid-cols-12 grid-rows-[3.5rem_auto] lg:grid-rows-none h-screen'>
     
     <aside className='lg:col-span-3'>
@@ -27,8 +26,8 @@ export default function RootLayout({
     </aside>
 
     <main className="lg:col-span-9 overflow-y-auto touch-auto">
-      <div className="mx-auto px-2 mt-6 mb-12 w-11/12 ">
-        <div className="rounded-lg p-px shadow-lg shadow-black/40">
+      <div className="mx-auto px-1 sm:px-3 md:px-6 lg:px-10 mt-2 mb-12 w-full ">
+        <div className="rounded-md p-px shadow-md shadow-slate-500">
           <div className="rounded-xl p-3.5 bg-white pb-20">
             {children}
           </div>
@@ -41,4 +40,3 @@ export default function RootLayout({
 </html>
   )
 }
-// https://tailwindcss.com/docs/responsive-design sm / md / lg / xl / 2xl

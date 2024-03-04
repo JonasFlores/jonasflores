@@ -8,28 +8,32 @@ import clsx from 'clsx';
 import { MenuAlt2Icon, XIcon, LinkIcon } from '@heroicons/react/solid';
 
 export function NavBar(){
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
 
   return (
-    <div className="h-full w-full bg-black">
+    <div className="h-full w-full bg-neutral-500 bg-opacity-80 lg:bg-opacity-100 lg:bg-black">
       
       {/* Wraper */}
       <div className={clsx("flex flex-row items-center h-14 px-4 py-4 lg:border-none", {
-              'border-b-2 border-green-600': isOpen,
+              'border-b-2 border-slate-700': isOpen,
               })}>
-        <div className='basis-11/12'>
+        <div className='basis-3/12 lg:basis-full'>
           <Link href="/" onClick={close} className="group flex w-full items-center gap-x-2.5">
-            <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
+            <h3 className="font-bold tracking-wide text-white group-hover:hover:text-slate-200">
               Portfolio
             </h3>
           </Link>
         </div>
         
-        <div className='text-black hover:text-white'>
-          <button type="button" onClick={() => setIsOpen(!isOpen)} className="group px-4 absolute right-0 top-0 flex gap-x-2 h-14 bg-green-600 lg:hidden items-center">
-            <div className="font-medium ">Menu</div>
-            {isOpen ? (<XIcon className="block w-6" />) : (<MenuAlt2Icon className="block w-6" />)}
+        <div className='hover:text-slate-200 text-white'>
+          <button 
+            type="button"
+            onClick={() => setIsOpen(!isOpen)} 
+            className="px-4 absolute right-0 top-0 flex h-14 lg:hidden items-center">
+            
+              <div className="font-medium ">Menu</div>
+              {isOpen ? (<XIcon className="block w-4 -mb-1" />) : (<MenuAlt2Icon className="block w-4 -mb-1" />)}
           </button>
         </div>
 
@@ -37,7 +41,7 @@ export function NavBar(){
 
       <div
         className={clsx('overflow-y-auto lg:static lg:block', {
-          'fixed inset-x-0 bottom-0 top-14 bg-black': isOpen,
+          'fixed inset-x-0 z-50 bottom-0 top-14 bg-black': isOpen,
           hidden: !isOpen,
         })}
       >
@@ -91,7 +95,7 @@ function GlobalNavItem({
     >
       <div className='flex gap-x-1'>
         {item.name}
-        {item.Isexternal? <LinkIcon className='w-4'/> : false}
+        {item.Isexternal? <LinkIcon className='w-4 -mb-[2px]'/> : false}
       </div>
     </Link>
   );
