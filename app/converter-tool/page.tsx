@@ -3,8 +3,9 @@
 import { SyntheticEvent, useEffect, useState } from "react"
 
 export default function Page(){
-  
-  const [editableTxt, setEditableTxt] = useState<string>('')
+  let example = ( `example  description\n#1  Your text is being converted\n#2  Feel free to build your own objects`) 
+
+  const [editableTxt, setEditableTxt] = useState<string>(example)
   const [generatedCSV, setGeneratedCSV] = useState<string[]>([])
   const [generatedJson, setGeneratedJson] = useState<{}[]>([])
   const separator_CSV = ';'
@@ -25,7 +26,7 @@ export default function Page(){
     let values:string[] = []
     let keyValueList:[string, string][] = []
 
-    let listElements = csv
+    let listElements = csv.slice()
     
     if(listElements.length == 0){return output}
     
@@ -73,7 +74,6 @@ export default function Page(){
     
     text = text.replace(regExSpaces, separator_CSV)
     text = text.replace(regExNewLines, '\n')
-    
     CsvToArray(text).forEach((element) => {
       output.push(element)
     })
@@ -111,15 +111,14 @@ export default function Page(){
               value={editableTxt} 
               onChange={(event: SyntheticEvent & {target : HTMLTextAreaElement}) => onChangeEditableTxt(event)} 
               placeholder="Insert your text here"
-              rows={5}
-              className="w-full overflow-y-auto p-2 border shadow-lg border-slate-500 focus:outline-none rounded-md"
+              className="w-full overflow-y-auto p-2 border shadow-sm border-green-400 focus:outline-none rounded-md h-48"
             ></textarea>
           </div>
 
           <div className="basis-1/2 overflow-x-auto">
-            <h3 className="font-medium px-2 text-slate-600">Generated CSV</h3>
+            <h3 className="font-medium px-2 text-slate-600">CSV</h3>
             <div>
-              <div className="select-all p-2 shadow-lg text-slate-800 overflow-x-auto border border-slate-500 rounded-md min-h-10">
+              <div className="select-all p-2 shadow-sm text-slate-800 overflow-auto border border-slate-300 rounded-md h-48">
                 {generatedCSV?.map((line, i) => { return (<p key={i}>{line + ';'}</p>)})}
               </div>
             </div>
@@ -129,30 +128,12 @@ export default function Page(){
 
         <div>
           <h3 className="font-medium px-2 text-slate-600">JSON</h3>
-          <div className="basis-auto bg-slate-100">
-                {JSON.stringify(generatedJson)}
+          <div className="whitespace-pre-wrap select-all basis-auto text-xs border border-slate-300 shadow-sm rounded-md overflow-y-auto max-h-52 min-h-10 p-2 text-slate-800">
+                {JSON.stringify(generatedJson, null, ' ')}
           </div>
         </div>
       </div>
         
     </>
   )
-
 }
-
-/*
-                  
-      try {  
-        keys.forEach((key, indice) => {
-          console.log('key[i]: ' + keys[indice] + ' | value[i]: ' + values[indice] + ' | ' + line + ' | ' + indice )
-          // temp.push = [keys[indice], values[indice]]
-          // temp.push(['1','2'])
-          keyValueList.push([key,values[indice]])
-          // console.log(temp)
-          console.log(keyValueList)
-          // keyValueList.push( [ keys[indice], values[indice] ] )
-          // output.push(Object.fromEntries(temp))
-        })  
-      } catch (error) {console.log(error) }
-      keyValueList = []
-      */    
