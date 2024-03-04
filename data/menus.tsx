@@ -9,22 +9,17 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 	{
 		name: "Projects",
 		itens: [
-			{
-				name: 'Curriculum Vitae',
-				slug: 'curriculum-vitae'
-			},
-			{
-				name: 'Wage Tax Information - New Zealand',
-				slug: 'wage-tax-nz',
-			}
-			
+			{name: 'Curriculum Vitae', slug: 'curriculum-vitae'},
+			{name: 'Cover Letter', slug: 'curriculum-vitae/cover-letter'},
+			{name: 'Wage Tax Information - New Zealand', slug: 'wage-tax-nz'},
+			{name:'TXT Converter | CSV & JSON', slug:'converter-tool'},
 		]
 	},
 	{
 		name: 'Concepts',
 		itens: [
 			{name:'Lifecycle UseState vs Constraints', slug:'usestate-lifecycle'},
-			{name:'TXT Converter to JSON Tool', slug:'converter-tool'}
+			
 		]
 	},
 	{
