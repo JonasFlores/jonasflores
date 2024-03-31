@@ -8,6 +8,8 @@ export default function ConvertTool(){
   const [editableTxt, setEditableTxt] = useState<string>(example)
   const [generatedCSV, setGeneratedCSV] = useState<string[]>([])
   const [generatedJson, setGeneratedJson] = useState<{}[]>([])
+  const [separator_Custom, setSeparator_Custom] = useState<string>(' ')
+  const [separatorX_Custom, setSeparatorX_Custom] = useState<number>(2)
   const separator_CSV = ';'
 
   // TXT FUNCTIONS
@@ -58,7 +60,7 @@ export default function ConvertTool(){
 
   // CSV Functions
   //SET_CSV > EditableTXT_Changes_Listener
-  useEffect(()=>{ setGeneratedCSV(CsvGeneratorRealTime(editableTxt)) }, [editableTxt])
+  useEffect(()=>{ setGeneratedCSV(CsvGeneratorRealTime(editableTxt)) }, [editableTxt, separator_Custom, separatorX_Custom])
 
   function CsvGeneratorRealTime(text: string): string[]{
     let output: string[] = []
@@ -69,9 +71,9 @@ export default function ConvertTool(){
 
     text = text.trimStart()
 
-    const regExSpaces = /[ ]{2,}/mg
+    const regExSpaces = new RegExp('['+ separator_Custom + ']{'+ separatorX_Custom +',}', 'mg') // /[ ]{2,}/
     const regExNewLines = /[\r\n]/mg
-    
+
     text = text.replace(regExSpaces, separator_CSV)
     text = text.replace(regExNewLines, '\n')
     CsvToArray(text).forEach((element) => {
@@ -123,8 +125,22 @@ export default function ConvertTool(){
 
         </div>
 
-        <div>
-              <p className="font-medium text-xs text-orange-600 bg-yellow-100 p-1">*To define columns, use at least two spaces</p>
+        <div className="flex flex-row gap-2 font-medium text-xs text-orange-600 bg-yellow-100 p-1">
+              <div className="basis-6/12">
+                *To define columns, use at least two spaces
+              </div>
+              <div className="basis-6/12">
+                <span>
+                  Separator:
+                  <input className="w-5 mx-1 bg-white text-center border outline-none focus:border-orange-700" onChange={(e) => setSeparator_Custom(e.target.value)} value={separator_Custom} type="text" name="separator_Custom" id="separator_Custom" />
+
+                </span>
+                <span className="mx-2">
+                  Times:
+                  <input className="w-5 mx-1 bg-white text-center text-black border outline-none focus:border-orange-700" onChange={(e) => setSeparatorX_Custom(parseInt(e.target.value) || 0)} value={separatorX_Custom} type="text" name="separatorX_Custom" id="separatorX_Custom" />
+
+                </span>
+              </div>
         </div>
 
         <div className="mt-4">

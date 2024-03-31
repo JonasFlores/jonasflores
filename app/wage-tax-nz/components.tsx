@@ -2,10 +2,8 @@
 
 import { useState } from "react"
 
-export function TableFilter(){ 
+export function TableFilter({search, setSearch}: {search: string, setSearch: (value:string) => void }){ 
   
-  const [search, setSearch] = useState('')
-
   return(
     <>
     <label className="block mb-5">
