@@ -20,8 +20,7 @@ export default function Page(){
       search={search}
       setSearch={setSearch}
     /> */}
-    <Pagination page={page} rowsPerPage={rowsPerPage} total={tableRecords().length} setPage={setPage}>
-    </Pagination>
+    <Pagination page={page} rowsPerPage={rowsPerPage} total={tableRecords().length} setPage={setPage} />
     <table className='mt-3 table-auto border-collapse border border-slate-400 w-full text-center'>
       <caption className="caption-top border-t border-x border-slate-300 py-4 bg-slate-100 text-slate-500 font-medium">
         Weekly and fortnightly PAYE deduction tables | IR340 | September 2023 

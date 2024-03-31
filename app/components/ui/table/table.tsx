@@ -11,10 +11,7 @@ export default function Table(){
 
   return(
   <>
-    
-    
-    <Pagination rowsPerPage={rowsPerPage} page={page} total={55} setPage={setPage}>
-    </Pagination>
+    <Pagination rowsPerPage={rowsPerPage} page={page} total={55} setPage={setPage} />
   </>
   )
 }
