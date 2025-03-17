@@ -1,40 +1,48 @@
 {
-   "name": "dashboard",
-   "version": "0.1.0",
-   "private": true,
-   "license": "MIT",
-   "scripts": {
-      "dev": "next dev -p 8000",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint"
-   },
-   "dependencies": {
-      "@heroicons/react": "1.0.6",
-      "clsx": "1.2.1",
-      "next": "14.0.3-canary.7",
-      "react": "18.2.0",
-      "react-dom": "18.2.0",
-      "server-only": "0.0.1",
-      "styled-components": "6.0.0-beta.2",
-      "ms": "3.0.0-canary.1"
-   },
-   "devDependencies": {
-      "@tailwindcss/forms": "0.5.3",
-      "@tailwindcss/typography": "0.5.9",
-      "@types/ms": "0.7.31",
-      "@types/node": "18.11.17",
-      "@types/react": "18.0.26",
-      "@types/react-dom": "18.0.9",
-      "@vercel/git-hooks": "1.0.0",
-      "autoprefixer": "10.4.13",
-      "eslint": "8.30.0",
-      "eslint-config-next": "13.1.0",
-      "lint-staged": "13.1.0",
-      "postcss": "8.4.20",
-      "prettier": "2.8.1",
-      "prettier-plugin-tailwindcss": "0.2.1",
-      "tailwindcss": "3.4.1",
-      "typescript": "4.9.4"
-     }
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev --turbopack -p 8000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "1.0.6",
+    "@vercel/postgres": "^0.10.0",
+    "clsx": "1.2.1",
+    "dashboard": "file:",
+    "ms": "3.0.0-canary.1",
+    "next": "15.2.2",
+    "postgres": "^3.4.5",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "server-only": "0.0.1",
+    "styled-components": "6.0.0-beta.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "0.5.3",
+    "@tailwindcss/typography": "0.5.9",
+    "@types/ms": "0.7.31",
+    "@types/node": "18.11.17",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@vercel/git-hooks": "1.0.0",
+    "autoprefixer": "10.4.13",
+    "eslint": "^8.30.0",
+    "eslint-config-next": "^15.2.2",
+    "lint-staged": "13.1.0",
+    "postcss": "8.4.20",
+    "prettier": "2.8.1",
+    "prettier-plugin-tailwindcss": "0.2.1",
+    "tailwindcss": "3.4.1",
+    "typescript": "4.9.4"
+  },
+  "overrides": {
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
+  }
 }

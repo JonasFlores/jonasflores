@@ -1,16 +1,14 @@
 'use client'
 
 import clsx from 'clsx';
-import { TableFilter } from './components';
 import { tableIrdPaye } from '@/data/table_IRD_PAYE';
 import { useState } from 'react';
 import Pagination from '../components/ui/table/pagination';
 
 export default function Page(){
   
-  const [search, setSearch] = useState<string>('')
   const [page, setPage] = useState<number>(1)
-  const [rowsPerPage, setRowsPerPage] = useState<number>(150)
+  const [rowsPerPage, setRowsPerPage] = useState<number>(10)
   const tableRecords = () => tableIrdPaye
 
 

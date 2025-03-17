@@ -11,7 +11,6 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 		itens: [
 			{name: 'Curriculum Vitae', slug: 'curriculum-vitae'},
 			{name: 'Cover Letter', slug: 'curriculum-vitae/cover-letter'},
-			{name: 'Wage Tax Information - New Zealand', slug: 'wage-tax-nz'},
 			{name:'TXT Converter | CSV & JSON', slug:'converter-tool'},
 		]
 	},
@@ -23,27 +22,20 @@ export const menus: {name: string; itens: MenuItem[]}[] = [
 		]
 	},
 	{
-		name: "Site",
+		name: "Coming soon",
 		itens: [
-			{
-				name: 'Settings',
-				slug:'settings'
-			}
+			{name: 'AppSheets - Inventory Managment',slug: '#',Disable: true},
+			{name: 'Production Reports Tool',slug: '#',Disable: true},
+			{name: 'Wage Tax Information - New Zealand', slug: 'wage-tax-nz'}
+			
 		]
 	},
 	{
-		name: "Coming soon",
+		name: "Development",
 		itens: [
-			{
-				name: 'AppSheets - Inventory Managment',
-				slug: '#',
-				Disable: true
-			},
-			{
-				name: 'Production Reports Tool',
-				slug: '#',
-				Disable: true
-			}
+			{name: 'Settings',slug:'settings'},
+			{name: 'Todo',slug:'todo'},
+			{name: 'Test Page 2',slug:'test2'},
 			
 		]
 	},
