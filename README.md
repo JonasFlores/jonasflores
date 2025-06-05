@@ -2,11 +2,9 @@
 
 Hey, My name is Jonas, is good to see you here!
 
-I have two years experience as an Outsystems Software Developer.
+I'm a software developer with two and a half years of experience working on the Fiscal (ECF) product and a strong interest in continuous learning. I'm always looking to improve my skills through online courses and hands-on projects.
 
-I am currently living in Queenstown NZ.
-
-My dream is to find a job as a Software Developer in New Zealand, so, for now I'm spending my time learning all about the new frameworks for Web Applications.
+I lived in New Zealand for three years with the goal of improving my English, fulfilling my dream of living abroad, and achieving personal and financial goals. Now back in Brazil, I'm motivated to resume my career in technology, bringing with me a wealth of cultural and professional experiences. I'm disciplined, proactive, and driven by curiosity and a desire to learn, always seeking creative solutions to the challenges I face.
 
 So, Please, navigate to my PortifolioApp and check out everything I am doing.
 
