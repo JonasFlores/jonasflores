@@ -10,11 +10,11 @@ export const experienceData: TableCVStrutucture[] = [
     },
     col2: {
       line1: "Patagonia Chocolates",
-      line2: "Kitchen Hand",
+      line2: "Pastry Chef",
     },
     col3: {
       line1: "Ice Cream Maker",
-      line2: "Since July 2022"
+      line2: "July 2022 - May 2025"
     }
   
   },
@@ -33,7 +33,7 @@ export const experienceData: TableCVStrutucture[] = [
       line2: "Jan 2019 - Feb 2021",
       line3: "www.sispro.com.br"
     },
-    rowHide: "I worked on the fiscal project, collaborating with a small team to develop an automated tool for calculating and analyzing Brazilian System taxes. Our main challenge from the {'project\'s'} inception was addressing the data generation time for analysis, considering that our primary clients were Financial Institutions with billions of records to be processed annually. Our solution involved focusing on delivering with highly complex yet simple algorithms to optimize every possible fraction of a second. We implemented processes in parallelism wherever feasible."
+    rowHide: "I worked on the development of the ECF fiscal product from its conception to maturity. I was responsible for automating the validation and resolution process of ECF formulas and enabling the creation of new formulas through customized account structures. I started on the project by developing the first CRUD operations and query screens for tax calculations, and over time, I took on responsibility for the backend. I worked closely with the business analyst, collaborating in the design of solutions. The project, primarily aimed at financial institutions, required high performance in processing large volumes of data, which led us to develop optimized algorithms and apply parallelism techniques to ensure performance."
   },
   {
     Title: "EXPERIENCE",
@@ -89,7 +89,7 @@ export const qualificationData: TableCVStrutucture[] = [
   },
   
   {
-    Title: "EDUCATION E UALIFICATION",
+    Title: "EDUCATION E QUALIFICATION",
     key: 3,
 
     col1:{
