@@ -22,12 +22,8 @@ export default function Page(){
         <TitleSectionCV title="about me" />
     
         <div className="text-sm">
-          <p>DOB: 01/02/1995</p>
-          <p>Motivated Software Developer with 3 years of hands-on experience.</p>
-          <p>Seeking new career opportunities in the field.</p>
-          <p>Currently residing in Queenstown-NZ.</p>
-          <p>I bring a strong background in software development coupled with a passion for innovation.</p>
-          <p className="font-medium mt-1">Visa Status: Work Visa</p>
+          <p>I'm a software developer with two and a half years of experience working on the Fiscal (ECF) product and a strong interest in continuous learning. I'm always looking to improve my skills through online courses and hands-on projects.</p>
+          <p>I lived in New Zealand for three years with the goal of improving my English, fulfilling my dream of living abroad, and achieving personal and financial goals. Now back in Brazil, I'm motivated to resume my career in technology, bringing with me a wealth of cultural and professional experiences. I'm disciplined, proactive, and driven by curiosity and a desire to learn, always seeking creative solutions to the challenges I face.</p>
         </div>
       </div>
 
